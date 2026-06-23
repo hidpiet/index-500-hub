@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游娱乐 · 主题内容介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e2a3a;
+      line-height: 1.7;
+    }
+
+    /* —— Hero 深色区 —— */
+    .hero {
+      background: linear-gradient(135deg, #0b1622 0%, #1f2e3f 70%, #2a3e52 100%);
+      color: #eef2f6;
+      padding: 4rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 179, 237, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 1rem auto 0;
+      font-size: 1.2rem;
+      color: #cbd9e6;
+      position: relative;
+      z-index: 1;
+      font-weight: 350;
+    }
+
+    .hero .accent {
+      color: #99c9ff;
+    }
+
+    /* —— 正文通用容器 —— */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+    }
+
+    /* —— 优势区 / 卡片 —— */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 1.8rem 1.6rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+      transition: transform 0.18s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 20, 40, 0.08);
+    }
+
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #0f1e2e;
+    }
+
+    .card p {
+      color: #3e4d5e;
+      font-size: 0.98rem;
+    }
+
+    /* —— 说明区 / 双栏 —— */
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .two-col .col {
+      flex: 1 1 280px;
+    }
+
+    .two-col h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #0f1e2e;
+      border-left: 4px solid #2b6f9c;
+      padding-left: 1rem;
+    }
+
+    .two-col p {
+      margin-bottom: 1rem;
+      color: #2f3f4f;
+    }
+
+    .highlight-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .highlight-list li {
+      padding: 0.4rem 0 0.4rem 1.6rem;
+      position: relative;
+      color: #1f3243;
+    }
+
+    .highlight-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #2b6f9c;
+      font-weight: bold;
+    }
+
+    /* —— FAQ 摘要 —— */
+    .faq-summary {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      margin-top: 2rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #0f1e2e;
+      margin-bottom: 1.6rem;
+      border-bottom: 1px solid #e2eaf1;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #1f3243;
+      margin-bottom: 0.2rem;
+      font-size: 1.03rem;
+    }
+
+    .faq-item p {
+      color: #3e4d5e;
+      font-size: 0.96rem;
+      margin-left: 0.4rem;
+    }
+
+    /* —— 底部链接 —— */
+    .site-footer {
+      background: white;
+      border-top: 1px solid #e2eaf1;
+      padding: 2rem 2rem 2.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .site-footer .footer-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .site-footer a {
+      color: #1d6f9e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .site-footer a:hover {
+      border-bottom-color: #1d6f9e;
+    }
+
+    .site-footer p {
+      color: #3e4d5e;
+      font-size: 0.95rem;
+      margin: 0.7rem 0 0;
+    }
+
+    /* —— 全局强调色链接 —— */
+    a {
+      color: #1d6f9e;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: #0b4a6e;
+    }
+
+    /* —— 响应式 —— */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .container {
+        padding: 1.8rem 1.2rem;
+      }
+      .card {
+        padding: 1.4rem;
+      }
+      .faq-summary {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero 深色区 -->
+  <section class="hero">
+    <h1>九游娱乐 · 主题内容平台</h1>
+    <p>围绕休闲、竞技、策略与社交场景，提供结构化的内容聚合与轻量化体验。<br>
+    以信息密度与场景适配为线索，构建更清晰的数字娱乐界面。</p>
+    <p style="margin-top:0.8rem; font-size:0.95rem; opacity:0.7;">— 从主题内容出发，理解娱乐逻辑 —</p>
+  </section>
+
+  <!-- 优势区（卡片） -->
+  <div class="container">
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon">🧩</div>
+        <h3>内容结构化</h3>
+        <p>基于标签与主题树组织娱乐信息，降低浏览噪音，提升信息获取效率。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>场景化索引</h3>
+        <p>按休闲、策略、社交等场景划分内容路径，适配不同使用习惯与偏好。</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>轻量化交互</h3>
+        <p>界面简洁、响应迅速，重点突出内容本身，减少不必要的视觉干扰。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 说明区：双栏布局 + 场景切入 -->
+  <div class="container" style="padding-top:0.5rem;">
+    <div class="two-col">
+      <div class="col">
+        <h2>主题内容的延伸</h2>
+        <p>“九游娱乐” 并非传统门户或单一服务，而是围绕娱乐主题构建的内容索引与聚合空间。通过分类引擎和用户行为反馈，持续迭代内容分发的精准度。</p>
+        <p>从轻度休闲到深度策略，从单机体验到多人互动，平台覆盖多层级娱乐需求。信息密度适中，避免冗余跳转，让用户快速定位感兴趣的方向。</p>
+      </div>
+      <div class="col">
+        <h2>常见应用场景</h2>
+        <ul class="highlight-list">
+          <li>碎片时间浏览：主题推荐、短内容聚合</li>
+          <li>策略研究：玩法拆解、机制对比</li>
+          <li>社交娱乐：组队信息、社区话题索引</li>
+          <li>持续学习：新手指南、术语解读、版本动态</li>
+        </ul>
+        <p style="margin-top:1.2rem;">这些场景共同指向一个诉求：<strong>在信息过载中，快速获得有组织的娱乐内容</strong>。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="container" style="padding-top:0.5rem; padding-bottom:0.5rem;">
+    <div class="faq-summary">
+      <h2>常见问题摘要</h2>
+      <div class="faq-item">
+        <strong>Q：平台内容的主要来源是什么？</strong>
+        <p>内容来自公开娱乐资料、社区贡献及结构化整理，经分类与校验后以主题形式呈现。</p>
+      </div>
+      <div class="faq-item">
+        <strong>Q：是否包含实时交互功能？</strong>
+        <p>当前版本侧重内容索引与展示，部分主题区域支持评论与反馈入口，持续优化中。</p>
+      </div>
+      <div class="faq-item">
+        <strong>Q：如何找到特定主题的内容？</strong>
+        <p>可通过导航栏主题分类、搜索框或首页推荐区域快速定位。主题树结构会持续扩展。</p>
+      </div>
+      <p style="margin-top:0.8rem; color:#4e5e6e; font-size:0.93rem; border-top:1px solid #eef1f5; padding-top:0.8rem;">
+        更多细节与更新，请参考相关页面说明。
+      </p>
+    </div>
+  </div>
+
+  <!-- 底部链接区：自然嵌入 a 标签 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>了解更多关于内容索引、场景分类与平台理念，欢迎浏览 <a href="https://homecn-jiuyou.com">九游娱乐</a> 的持续更新内容。</p>
+      <p style="margin-top:0.8rem; font-size:0.9rem; color:#657b8c;">平台致力于提供结构化的娱乐信息参考，不承担任何形式的担保或承诺。</p>
+    </div>
+  </footer>
+
+</body>
+</html>
