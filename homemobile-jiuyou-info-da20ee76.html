@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游娱乐 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f1;
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            line-height: 1.8;
+            color: #2d2a24;
+            padding: 0 1.25rem;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.5rem 0 3rem;
+        }
+
+        /* ----- hero banner (杂志风格) ----- */
+        .hero {
+            background: #eae5db;
+            padding: 3rem 2rem;
+            margin-bottom: 2.8rem;
+            border-left: 6px solid #b7a78a;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            border-radius: 2px 12px 12px 2px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: #1f1c18;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #6b5f4e;
+            font-style: italic;
+            border-top: 1px solid #c9beac;
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ----- 文章排版 ----- */
+        section {
+            margin-bottom: 2.8rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 400;
+            border-bottom: 2px solid #d6cebe;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            color: #1f1c18;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            text-align: justify;
+            word-spacing: 0.02em;
+        }
+
+        /* 引用 / 提示框 (杂志 pull quote) */
+        .pull-quote {
+            background-color: #f0ece3;
+            padding: 1.4rem 2rem;
+            margin: 1.8rem 0;
+            border-left: 4px solid #b7a78a;
+            font-style: italic;
+            color: #3f382e;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .pull-quote strong {
+            font-style: normal;
+            color: #2d2a24;
+        }
+
+        .insight-box {
+            background: #ffffffda;
+            border: 1px solid #dad0bf;
+            padding: 1.4rem 1.8rem;
+            border-radius: 12px;
+            margin: 1.8rem 0;
+            box-shadow: 0 2px 6px rgba(90, 70, 50, 0.04);
+        }
+
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .insight-box .label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8b7c66;
+            border-bottom: 1px solid #d6cebe;
+            padding-bottom: 0.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 特点简表（内嵌文本） */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.8rem;
+            margin: 1.2rem 0 0.8rem;
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .feature-grid li {
+            flex: 0 0 auto;
+            font-size: 0.95rem;
+            padding: 0.2rem 0;
+            color: #3f382e;
+        }
+
+        .feature-grid li::before {
+            content: "▹ ";
+            color: #b7a78a;
+        }
+
+        /* 页尾 */
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dfd6c8;
+            font-size: 0.92rem;
+            color: #5f5544;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.6rem;
+        }
+
+        .footer-note a {
+            color: #4d4234;
+            text-decoration: underline wavy #b7a78a 1px;
+            text-underline-offset: 4px;
+            transition: color 0.2s;
+        }
+
+        .footer-note a:hover {
+            color: #7a6b53;
+            text-decoration: underline wavy #7a6b53 1.5px;
+        }
+
+        .footer-note .visit-hint {
+            background: #eae5db;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0 1rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .footer-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .pull-quote {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 首页横幅：杂志氛围 -->
+    <header class="hero">
+        <h1>九游娱乐 · 简明指南</h1>
+        <div class="sub">从日常缝隙到放松片刻，一份不夸张的访问笔记</div>
+    </header>
+
+    <!-- 背景说明 / 切入角度 -->
+    <section>
+        <h2>为什么写这份指南</h2>
+        <p>你大概和很多人一样，手机里存着几个常翻的站点，用来打发通勤、午休或者睡前的零碎时间。<strong>九游娱乐</strong>就是这样一个地方——它不标榜颠覆，也不制造焦虑，只是安安静静地提供一些可以随时打开的内容。这份指南想用最朴素的笔调，帮你了解它的基本面貌、常见场景，以及一些实用提醒。</p>
+    </section>
+
+    <!-- 三段自然介绍之一：平台特质 -->
+    <section>
+        <h2>一 · 一个聚合式的内容角落</h2>
+        <p>从界面到分类，「九游娱乐」给人的第一印象是克制。没有弹窗横幅，没有自动播放的视频，也没有层层嵌套的推荐算法。它的首页更像一张分类清晰的目录：你想找哪种类型的消遣，顺着标签点进去就好。这种「不打扰」的设计，在如今的网络环境里反而显得珍贵。</p>
+
+        <div class="pull-quote">
+            “它不试图占据你所有时间，只在你需要的时候，提供一个安静的出口。”
+        </div>
+
+        <p>内容方向上，它覆盖了日常娱乐的常见切面——游戏资讯、影视杂谈、轻社区讨论，以及一些工具向的索引。如果你是第一次接触，不妨把它看作一个<strong>经过筛选的信息走廊</strong>，而不是漫无边际的广场。</p>
+    </section>
+
+    <!-- 三段自然介绍之二：常见使用场景 -->
+    <section>
+        <h2>二 · 三个适合打开它的瞬间</h2>
+        <p>根据多数用户的反馈，下面三种场景最常和「九游娱乐」联系在一起：</p>
+
+        <ul class="feature-grid">
+            <li>午休时快速浏览游戏评测或更新资讯</li>
+            <li>睡前放松，翻翻影视推荐或轻松话题</li>
+            <li>想找某个老游戏的攻略或社区讨论</li>
+        </ul>
+
+        <p>当然，每个人的习惯不同。有人喜欢在周末下午泡一杯茶，慢慢翻看分类下的长文；也有人只是上下班路上点开一两篇，当作背景音之外的调剂。重要的是——<strong>它始终在那里，不需要你投入太多心理成本</strong>。</p>
+
+        <div class="insight-box">
+            <div class="label">一点观察</div>
+            <p>很多持续使用的用户提到，他们最欣赏的是「九游娱乐」没有「签到」「积分排名」这类消耗注意力的设计。你来，它欢迎；你走，它也不挽留。这种松弛感在当下的娱乐平台中并不多见。</p>
+        </div>
+    </section>
+
+    <!-- 三段自然介绍之三：访问提醒与心态 -->
+    <section>
+        <h2>三 · 关于访问的一点提醒</h2>
+        <p>任何线上空间，最好的使用方式都是<strong>主动、有意识</strong>的。打开 <a href="https://homemobile-jiuyou.com">九游娱乐</a> 之前，或许可以先问自己一句：我现在是想找点具体的乐子，还是只想随便刷刷？如果是前者，你会很容易找到对胃口的板块；如果是后者，也请留意时间——好的内容容易让人沉浸。</p>
+
+        <p>另外，平台本身不设强制注册或付费墙，大部分内容无需登录即可浏览。但如果你希望参与讨论或收藏内容，简单的注册流程就能解锁这些功能。个人数据方面，建议使用常用的邮箱和强度足够的密码，这是所有网络服务的基本常识。</p>
+
+        <p class="pull-quote" style="margin-top:1.4rem;">
+            <strong>一句话概括：</strong>把它当成一个干净、不吵闹的娱乐资料馆，按需取用，自在就好。
+        </p>
+    </section>
+
+    <!-- FAQ摘要（杂志常见模块） -->
+    <section>
+        <h2>常见疑问摘要</h2>
+        <p><strong>Q: 需要下载单独的 App 吗？</strong><br>
+        A: 不需要，直接在浏览器里打开即可。移动端和桌面端的适配都比较自然，没有额外安装的必要。</p>
+
+        <p><strong>Q: 内容更新频率如何？</strong><br>
+        A: 不算密集，但每周都有新的文章或帖子出现。如果你期待的是实时新闻流，它可能不太适合；但如果你偏爱经过编辑筛选的内容，节奏正好。</p>
+
+        <p><strong>Q: 社区氛围怎么样？</strong><br>
+        A: 整体偏友善，讨论区较少见到引战或刷屏。当然，任何开放社区都需要参与者共同维护，保持礼貌和理性总是没错的。</p>
+
+        <div class="insight-box">
+            <div class="label">给新访客</div>
+            <p>如果你只是路过，不妨先逛逛首页的「最近更新」和「推荐阅读」两个区域。它们通常能帮你快速了解这个站点的调性。觉得合适再深入探索，完全不用着急。</p>
+        </div>
+    </section>
+
+    <!-- 页尾访问提示（自然嵌入链接） -->
+    <footer class="footer-note">
+        <span>想亲自感受？随时可以打开 <a href="https://homemobile-jiuyou.com">九游娱乐</a> 看看今天的更新。</span>
+        <span class="visit-hint">· 杂志专题 · 简明指南 ·</span>
+    </footer>
+
+</div>
+</body>
+</html>
